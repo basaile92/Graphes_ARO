@@ -1,17 +1,11 @@
 digraph {
 A [color=red]
 B [color=green]
-C [color=green]
-D [color=green]
-E [color=green]
+C [color=blue]
+D [color=blue]
+E [color=blue]
  A -> B
- A -> C
- A -> D
- A -> E
  B -> C
- B -> D
- B -> E
  C -> D
- C -> E
  D -> E
 }

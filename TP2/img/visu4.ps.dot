@@ -5,13 +5,7 @@ C [color=red]
 D [color=red]
 E [color=green]
  A -> B
- A -> C
- A -> D
- A -> E
  B -> C
- B -> D
- B -> E
  C -> D
- C -> E
  D -> E
 }
