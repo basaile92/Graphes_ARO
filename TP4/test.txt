@@ -1,5 +1,5 @@
 # type
-type = oriente;
+type = non-oriente;
 
 # la liste des sommets
 sommets = A B C D E F G;
@@ -7,8 +7,9 @@ sommets = A B C D E F G;
 # la liste des arcs
 arcs =
      A  B 1 
-     B  C 1
+     A  C 1
      B  D 1 
-     A  F 1
-     A  G 1
+     B  E 1
+     C  F 1
+     C  G 1
 ;
