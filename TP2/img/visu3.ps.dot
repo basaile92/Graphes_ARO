@@ -1,0 +1,15 @@
+graph {
+A [color=red]
+B [color=red]
+C [color=green]
+D [color=green]
+E [color=green]
+F [color=red]
+G [color=green]
+ A -- B
+ B -- C
+ B -- D
+ A -- F
+ A -- G
+ F -- E
+}

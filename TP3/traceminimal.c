@@ -53,7 +53,7 @@ void graphe2visuPlusCourtsChemins(tGraphe graphe, char *outfile, tNumeroSommet d
   FILE *fic;
   char commande[80];
   char dotfile[80]; /* le fichier dot pour cr´eer le ps */
-  int ret, i, j;
+  int ret, i, j, k, l;
   tNomSommet actuel, prochain;
   char* couleur, *couleurarete;
   /* on va cr´eer un fichier pour graphviz, dans le fichier "outfile".dot */
@@ -75,21 +75,19 @@ void graphe2visuPlusCourtsChemins(tGraphe graphe, char *outfile, tNumeroSommet d
     grapheRecupNomSommet(graphe, i, actuel);
     fprintf(fic, "%s [color=%s];\n", actuel, couleur);
   }
-  for(i = 0; i <= grapheNbSommets(graphe) - 1; i++)
+  for(j = 0; j < grapheNbArcs(graphe) ; j++)
   {
-
-    for(j = 0; j <= grapheNbVoisinsSommet(graphe, i)-1; j++)
-    {
+        k=grapheRecupArcNumero(graphe, j).orig;
+        l=grapheRecupArcNumero(graphe, j).dest;
         couleurarete = "black";
-        if((i == depart && pred[grapheVoisinSommetNumero(graphe, i, j)] == depart )|| (pred[i] == grapheVoisinSommetNumero(graphe, i, j) && grapheVoisinSommetNumero(graphe, i, j) == depart))
+        if((k == depart && pred[l] == depart )|| (pred[k] == l && l == depart))
         {
 
           couleurarete = "blue";
         }
-        grapheRecupNomSommet(graphe, i, actuel);
-        grapheRecupNomSommet(graphe, grapheVoisinSommetNumero(graphe, i, j), prochain);
+        grapheRecupNomSommet(graphe, k, actuel);
+        grapheRecupNomSommet(graphe, l, prochain);
         fprintf(fic, " %s -- %s [color=%s];\n", actuel, prochain, couleurarete);
-    }
   }
   fprintf(fic, "}\n");
 

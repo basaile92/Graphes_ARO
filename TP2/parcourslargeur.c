@@ -48,14 +48,11 @@ void graphe2visuCouleurs(tGraphe graphe, char *outfile, tTabCouleurs tabCouleurs
     fprintf(fic, "%s [color=%s]\n", sommet, color);
   }
 
-  for(i = 0; i <= grapheNbSommets(graphe) - 1; i++)
+  for(i = 0; i <= grapheNbArcs(graphe) - 1; i++)
   {
-    for(j = 0; j <= grapheNbSuccesseursSommet(graphe, i)-1; j++)
-    {
-      grapheRecupNomSommet(graphe, i, actuel);
-      grapheRecupNomSommet(graphe, grapheSuccesseurSommetNumero(graphe, i, j), prochain);
-      fprintf(fic, " %s -%c %s\n", actuel, isdigraph, prochain);
-    }
+        grapheRecupNomSommet(graphe, grapheRecupArcNumero(graphe, i).orig, actuel);
+        grapheRecupNomSommet(graphe, grapheRecupArcNumero(graphe, i).dest, prochain);
+        fprintf(fic, " %s -%c %s\n", actuel, isdigraph, prochain);
   }
 fprintf(fic, "}\n");
 

@@ -7,12 +7,7 @@ E [color=black];
 F [color=black];
  A -- B [color=blue];
  A -- C [color=blue];
- A -- F [color=blue];
- B -- A [color=blue];
  B -- C [color=black];
- C -- A [color=blue];
- C -- B [color=black];
+ A -- F [color=blue];
  E -- F [color=black];
- F -- A [color=blue];
- F -- E [color=black];
 }
